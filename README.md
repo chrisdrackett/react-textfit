@@ -110,6 +110,7 @@ class App extends Component {
 * `min` (Number) Minimum font size in pixel. Default is `13`.
 * `max` (Number) Maximum font size in pixel. Default is the current height of the container.
 * `onReady` (Function) Will be called when text is fitted.
+* `calculateOnResize` (Boolean) Set this to true to recalculate on browser window resize.
 
 ## License
 
