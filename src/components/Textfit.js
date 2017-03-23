@@ -245,7 +245,6 @@ export default class Textfit extends Component {
       whiteSpace: isSingleLine ? 'nowrap' : 'normal',
       overflow: isMinSize && isSingleLine ? 'hidden' : 'visible',
       textOverflow: isMinSize && isSingleLine ? 'ellipsis' : 'clip',
-      lineHeight: isSingleLine ? 1 : 'auto',
     }
 
     return (
