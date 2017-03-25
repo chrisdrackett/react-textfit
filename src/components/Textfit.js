@@ -229,6 +229,7 @@ export default class Textfit extends Component {
       max,
       isSingleLine,
       onReady,
+      calculateOnResize,
       ...otherProps
     } = this.props
 
