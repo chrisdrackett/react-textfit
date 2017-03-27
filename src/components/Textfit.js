@@ -101,7 +101,12 @@ export default class Textfit extends Component {
     const originalHeight = innerHeight(el)
 
     // if we don't have a max value, use the full height of the container.
-    const max = this.props.max ? this.props.max : originalHeight
+    let max = this.props.max ? this.props.max : originalHeight
+
+    // but we never want the max lower than the min
+    if (max < min) {
+      max = min
+    }
 
     const wrapper = this._root
 
