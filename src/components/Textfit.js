@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react'
-import { findDOMNode } from 'react-dom'
 import shallowEqual from './utils/shallowEqual'
 import series from './utils/series'
 import whilst from './utils/whilst'
@@ -96,7 +95,7 @@ export default class Textfit extends Component {
       onReady,
     } = this.props
 
-    const el = findDOMNode(this)
+    const el = this._parent
     const originalWidth = innerWidth(el)
     const originalHeight = innerHeight(el)
 
@@ -254,7 +253,7 @@ export default class Textfit extends Component {
     }
 
     return (
-      <div style={finalStyle} {...otherProps}>
+      <div style={finalStyle} {...otherProps} ref={c => this._parent = c}>
         <span
           ref={c => this._root = c}
           style={wrapperStyle}
