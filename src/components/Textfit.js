@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { findDOMNode } from 'react-dom'
 import shallowEqual from './utils/shallowEqual'
 import series from './utils/series'
@@ -90,11 +91,7 @@ export default class Textfit extends Component {
   }
 
   process = () => {
-    const {
-      min,
-      isSingleLine,
-      onReady,
-    } = this.props
+    const { min, isSingleLine, onReady } = this.props
 
     const el = findDOMNode(this)
     const originalWidth = innerWidth(el)

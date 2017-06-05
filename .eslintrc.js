@@ -3,6 +3,7 @@ module.exports = {
   extends: 'react-app',
   plugins: ['babel'],
   rules: {
+    quotes: ['error', 'single'],
     'babel/semi': ['error', 'never'],
     'comma-dangle': [
       'error',
