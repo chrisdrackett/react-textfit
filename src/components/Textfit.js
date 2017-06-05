@@ -1,12 +1,12 @@
-import React, { Component } from "react"
-import PropTypes from "prop-types"
-import { findDOMNode } from "react-dom"
-import shallowEqual from "./utils/shallowEqual"
-import series from "./utils/series"
-import whilst from "./utils/whilst"
-import throttle from "./utils/throttle"
-import uniqueId from "./utils/uniqueId"
-import { innerWidth, innerHeight } from "./utils/innerSize"
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { findDOMNode } from 'react-dom'
+import shallowEqual from './utils/shallowEqual'
+import series from './utils/series'
+import whilst from './utils/whilst'
+import throttle from './utils/throttle'
+import uniqueId from './utils/uniqueId'
+import { innerWidth, innerHeight } from './utils/innerSize'
 
 function assertElementFitsWidth(el, width) {
   // -1: temporary bugfix, will be refactored soon
@@ -66,7 +66,7 @@ export default class Textfit extends Component {
 
   componentDidMount = () => {
     if (this.props.calculateOnResize) {
-      window.addEventListener("resize", this.handleWindowResize)
+      window.addEventListener('resize', this.handleWindowResize)
     }
 
     this.process()
@@ -80,7 +80,7 @@ export default class Textfit extends Component {
   }
 
   componentWillUnmount = () => {
-    window.removeEventListener("resize", this.handleWindowResize)
+    window.removeEventListener('resize', this.handleWindowResize)
 
     // Setting a new pid will cancel all running processes
     this.pid = uniqueId()
@@ -104,14 +104,14 @@ export default class Textfit extends Component {
 
     if (originalHeight <= 0 || isNaN(originalHeight)) {
       console.warn(
-        "Can not process element without height. Make sure the element is displayed and has a static height.",
+        'Can not process element without height. Make sure the element is displayed and has a static height.',
       )
       return
     }
 
     if (originalWidth <= 0 || isNaN(originalWidth)) {
       console.warn(
-        "Can not process element without width. Make sure the element is displayed and has a static width.",
+        'Can not process element without width. Make sure the element is displayed and has a static width.',
       )
       return
     }
@@ -235,20 +235,20 @@ export default class Textfit extends Component {
     const finalStyle = {
       ...style,
       fontSize: fontSize,
-      overflowY: this.state.shouldScroll ? "auto" : "clip",
+      overflowY: this.state.shouldScroll ? 'auto' : 'clip',
     }
 
     const wrapperStyle = {
-      display: ready ? "block" : "inline-block",
-      whiteSpace: isSingleLine ? "nowrap" : "normal",
-      overflow: isMinSize && isSingleLine ? "hidden" : "visible",
-      textOverflow: isMinSize && isSingleLine ? "ellipsis" : "clip",
+      display: ready ? 'block' : 'inline-block',
+      whiteSpace: isSingleLine ? 'nowrap' : 'normal',
+      overflow: isMinSize && isSingleLine ? 'hidden' : 'visible',
+      textOverflow: isMinSize && isSingleLine ? 'ellipsis' : 'clip',
     }
 
     return (
       <div style={finalStyle} {...otherProps}>
         <span
-          ref={c => (this._root = c)}
+          ref={c => this._root = c}
           style={wrapperStyle}
           children={children}
         />
