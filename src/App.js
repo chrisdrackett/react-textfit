@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
+import React, { Component } from "react"
 
-import Textfit from './components/Textfit'
+import Textfit from "./components/Textfit"
 
 export default class App extends Component {
   state = {
-    text: 'Edit this text!',
-    mode: 'single',
+    text: "Edit this text!",
+    mode: "single",
     min: 13,
     max: 100,
   }
@@ -25,7 +25,7 @@ export default class App extends Component {
   handleChangeMax = (e) => {
     let value = e.target.value
 
-    if (e.target.value === '') {
+    if (e.target.value === "") {
       value = false
     } else {
       value = parseFloat(value)
@@ -48,7 +48,8 @@ export default class App extends Component {
           <a
             href="https://github.com/malte-wessel/react-textfit"
             target="_blank"
-            style={{ float: 'right' }}
+            rel="noopener noreferrer"
+            style={{ float: "right" }}
           >
             <i className="fa fa-github" />
           </a>
@@ -61,15 +62,15 @@ export default class App extends Component {
               </li>
               <li>
                 <strong>fast:</strong>
-                {' '}
+                {" "}
                 uses binary search for efficiently find the correct fit
               </li>
               <li><strong>100%</strong> react-goodness</li>
               <li>
                 works with
-                {' '}
+                {" "}
                 <strong>any style</strong>
-                {' '}
+                {" "}
                 configuration (line-height, padding, ...)
               </li>
             </ul>
@@ -96,17 +97,31 @@ export default class App extends Component {
           </div>
           <div className="column-25">
             <Textfit style={inlineStyle}>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+              erat, sed diam voluptua.
             </Textfit>
           </div>
           <div className="column-25">
             <Textfit style={inlineStyle}>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+              erat, sed diam voluptua. At vero eos et accusam et justo duo
+              dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+              sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
+              amet, consetetur sadipscing elitr.
             </Textfit>
           </div>
           <div className="column-25">
             <Textfit style={inlineStyle}>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+              erat, sed diam voluptua. At vero eos et accusam et justo duo
+              dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+              sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
+              amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+              invidunt ut labore et dolore magna aliquyam erat, sed diam
+              voluptua.
             </Textfit>
           </div>
         </div>
@@ -114,7 +129,7 @@ export default class App extends Component {
         <div className="row">
           <div className="column-50">
             <Textfit
-              isSingleLine={mode === 'single'}
+              isSingleLine={mode === "single"}
               style={inlineStyle}
               min={this.state.min}
               max={this.state.max ? this.state.max : null}
